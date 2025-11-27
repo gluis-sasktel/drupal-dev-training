@@ -1,0 +1,17 @@
+{
+    "_hash": "eb415b2d8efe29d7205d4fe4c8788328c88f8dccd089c2b6a6a23bbd4598ffd0",
+    "patches": {
+        "drupal/core": [
+            {
+                "package": "drupal/core",
+                "description": "#3560127 Exception in Umami building breadcrumbs for error pages",
+                "url": "patches/core-umami-mr13971.patch",
+                "sha256": "ead38da2b9f6454180372a420f22f879746507070a59826476d4ef8cd958a3d6",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}
