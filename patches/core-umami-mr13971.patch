@@ -1,0 +1,102 @@
+From 53bc49e205d5f93d0d126f65c35ee7ee7290c0af Mon Sep 17 00:00:00 2001
+From: Aryan Singh <aryan.singh@innoraft.com>
+Date: Thu, 27 Nov 2025 15:39:52 +0530
+Subject: [PATCH 1/3] Issue #3560127: Exception in Umami building breadcrumbs
+ for error pages.
+
+---
+ core/lib/Drupal/Core/Controller/TitleResolver.php | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/core/lib/Drupal/Core/Controller/TitleResolver.php b/core/lib/Drupal/Core/Controller/TitleResolver.php
+index 0b39b8cf0919..8586e196e9f4 100644
+--- a/core/lib/Drupal/Core/Controller/TitleResolver.php
++++ b/core/lib/Drupal/Core/Controller/TitleResolver.php
+@@ -48,7 +48,10 @@ public function __construct(ControllerResolverInterface $controller_resolver, Tr
+   /**
+    * {@inheritdoc}
+    */
+-  public function getTitle(Request $request, Route $route) {
++  public function getTitle(Request $request, ?Route $route) {
++    if (!$route) {
++      return NULL;
++    }
+     $route_title = NULL;
+     // A dynamic title takes priority. Route::getDefault() returns NULL if the
+     // named default is not set.  By testing the value directly, we also avoid
+-- 
+GitLab
+
+
+From 00f8a5c3dc38f19d63c49378d71b361afb97cead Mon Sep 17 00:00:00 2001
+From: Aryan Singh <aryan.singh@innoraft.com>
+Date: Thu, 27 Nov 2025 18:52:03 +0530
+Subject: [PATCH 2/3] Issue #3560127: Solve the TypeError
+ inumami_preprocess_breadcrumb.
+
+---
+ core/lib/Drupal/Core/Controller/TitleResolver.php | 5 +----
+ core/profiles/demo_umami/themes/umami/umami.theme | 5 ++++-
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/core/lib/Drupal/Core/Controller/TitleResolver.php b/core/lib/Drupal/Core/Controller/TitleResolver.php
+index 8586e196e9f4..0b39b8cf0919 100644
+--- a/core/lib/Drupal/Core/Controller/TitleResolver.php
++++ b/core/lib/Drupal/Core/Controller/TitleResolver.php
+@@ -48,10 +48,7 @@ public function __construct(ControllerResolverInterface $controller_resolver, Tr
+   /**
+    * {@inheritdoc}
+    */
+-  public function getTitle(Request $request, ?Route $route) {
+-    if (!$route) {
+-      return NULL;
+-    }
++  public function getTitle(Request $request, Route $route) {
+     $route_title = NULL;
+     // A dynamic title takes priority. Route::getDefault() returns NULL if the
+     // named default is not set.  By testing the value directly, we also avoid
+diff --git a/core/profiles/demo_umami/themes/umami/umami.theme b/core/profiles/demo_umami/themes/umami/umami.theme
+index e7ebb5849a40..50bd9f965b22 100644
+--- a/core/profiles/demo_umami/themes/umami/umami.theme
++++ b/core/profiles/demo_umami/themes/umami/umami.theme
+@@ -110,7 +110,10 @@ function umami_preprocess_breadcrumb(&$variables): void {
+     $variables['current_page_title'] = $entity->getPlugin()->suggestedTitle();
+   }
+   else {
+-    $variables['current_page_title'] = \Drupal::service('title_resolver')->getTitle(\Drupal::request(), $route_match->getRouteObject());
++    $route = $route_match->getRouteObject();
++    if ($route) {
++      $variables['current_page_title'] = \Drupal::service('title_resolver')->getTitle(\Drupal::request(), $route);
++    }  
+   }
+   // Since we are printing the 'Current Page Title', add the URL cache context.
+   // If we don't, then we might end up with something like
+-- 
+GitLab
+
+
+From 8dec27055d53528bffb3cec6d80ebca1889264cf Mon Sep 17 00:00:00 2001
+From: Aryan Singh <aryan.singh@innoraft.com>
+Date: Thu, 27 Nov 2025 22:43:21 +0530
+Subject: [PATCH 3/3] Issue #3560127: Solve pipeline failure.
+
+---
+ core/profiles/demo_umami/themes/umami/umami.theme | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/core/profiles/demo_umami/themes/umami/umami.theme b/core/profiles/demo_umami/themes/umami/umami.theme
+index 50bd9f965b22..99beb860ec03 100644
+--- a/core/profiles/demo_umami/themes/umami/umami.theme
++++ b/core/profiles/demo_umami/themes/umami/umami.theme
+@@ -113,7 +113,7 @@ function umami_preprocess_breadcrumb(&$variables): void {
+     $route = $route_match->getRouteObject();
+     if ($route) {
+       $variables['current_page_title'] = \Drupal::service('title_resolver')->getTitle(\Drupal::request(), $route);
+-    }  
++    }
+   }
+   // Since we are printing the 'Current Page Title', add the URL cache context.
+   // If we don't, then we might end up with something like
+-- 
+GitLab
+

@@ -43,7 +43,11 @@
     },
     "extra": {
         "enable-patching": true,
-        "patches": {},
+        "patches": {
+            "drupal/core": {
+                "#3560127 Exception in Umami building breadcrumbs for error pages": "patches/core-umami-mr13971.patch"
+            }
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
