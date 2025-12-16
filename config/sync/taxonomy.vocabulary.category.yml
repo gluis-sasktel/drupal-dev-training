@@ -1,0 +1,9 @@
+uuid: a9f976d5-c2e0-44bd-8d48-eea003511996
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: category
+description: 'Type of accessory'
+weight: 0
+new_revision: false

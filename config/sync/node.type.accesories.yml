@@ -1,0 +1,18 @@
+uuid: a59c1931-4b1c-4dce-ad43-b2f89152581d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Accesories
+type: accesories
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

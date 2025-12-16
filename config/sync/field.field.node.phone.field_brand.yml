@@ -1,0 +1,29 @@
+uuid: dc85d924-70c7-4010-810b-5583683e8918
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_brand
+    - node.type.phone
+    - taxonomy.vocabulary.brands
+id: node.phone.field_brand
+field_name: field_brand
+entity_type: node
+bundle: phone
+label: Brand
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      brands: brands
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,9 @@
+uuid: 870488b1-aeae-4383-8386-99f353f5558a
+langcode: en
+status: true
+dependencies: {  }
+name: 'storage unit'
+vid: storage_unit
+description: null
+weight: 0
+new_revision: false

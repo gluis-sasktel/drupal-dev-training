@@ -1,0 +1,20 @@
+uuid: cfdc49a7-3071-43cd-8b3e-321a95ecf8e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+id: node.field_color_accessory
+field_name: field_color_accessory
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

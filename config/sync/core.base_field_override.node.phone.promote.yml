@@ -1,0 +1,22 @@
+uuid: 351cd95b-b8de-4070-8fe1-b0d2fac70be4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.phone
+id: node.phone.promote
+field_name: promote
+entity_type: node
+bundle: phone
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

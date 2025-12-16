@@ -1,0 +1,23 @@
+uuid: 3bf13744-3771-40a4-a99d-5db408e1ab45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price_accessory
+    - node.type.accesories
+id: node.accesories.field_price_accessory
+field_name: field_price_accessory
+entity_type: node
+bundle: accesories
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

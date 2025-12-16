@@ -1,0 +1,22 @@
+uuid: 3637d78b-846f-4e28-ad6c-1a852bc33bc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color
+    - node.type.phone
+  module:
+    - color_field
+id: node.phone.field_color
+field_name: field_color
+entity_type: node
+bundle: phone
+label: Color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

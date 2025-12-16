@@ -1,0 +1,29 @@
+uuid: 5d4ba2b2-9805-4863-96d9-554dc1bbbff4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_storage_unit
+    - node.type.phone
+    - taxonomy.vocabulary.storage_unit
+id: node.phone.field_storage_unit
+field_name: field_storage_unit
+entity_type: node
+bundle: phone
+label: 'Storage unit'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      storage_unit: storage_unit
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

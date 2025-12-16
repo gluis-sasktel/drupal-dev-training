@@ -1,0 +1,23 @@
+uuid: cb360526-60c5-455d-b5ed-71dcad6ce754
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price
+    - node.type.phone
+id: node.phone.field_price
+field_name: field_price
+entity_type: node
+bundle: phone
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

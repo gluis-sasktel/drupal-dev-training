@@ -1,0 +1,19 @@
+uuid: ec95c280-56c1-4454-9a76-b2de98ddc726
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_model
+    - node.type.phone
+id: node.phone.field_model
+field_name: field_model
+entity_type: node
+bundle: phone
+label: Model
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: f2392940-e4e1-447d-afff-23b154b1fe80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_in_stock_online
+    - node.type.accesories
+id: node.accesories.field_in_stock_online
+field_name: field_in_stock_online
+entity_type: node
+bundle: accesories
+label: 'In Stock Online'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
