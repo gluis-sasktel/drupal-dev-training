@@ -29,6 +29,7 @@
         "drupal/cshs": "^4.0",
         "drupal/devel": "^5.4",
         "drupal/gin": "^5.0",
+        "drupal/search_api": "^1.40",
         "drush/drush": "^13.6",
         "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^2.0"
