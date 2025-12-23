@@ -21,6 +21,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
+      title: Accessories
       fields:
         title:
           id: title
