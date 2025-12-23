@@ -453,7 +453,20 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No results were found'
+            format: basic_html
+          tokenize: false
       sorts: {  }
       arguments: {  }
       filters:
@@ -492,7 +505,7 @@ display:
           exposed: true
           expose:
             operator_id: field_brand_target_id_op
-            label: 'Brand (field_brand)'
+            label: Brand
             description: ''
             use_operator: false
             operator: field_brand_target_id_op
@@ -501,7 +514,7 @@ display:
             identifier: field_brand_target_id
             required: false
             remember: false
-            multiple: true
+            multiple: false
             remember_roles:
               authenticated: authenticated
             reduce: false
@@ -534,6 +547,45 @@ display:
           required_depth: 0
           none_label: '- Please select -'
           allow_unpublished: false
+        field_model_value:
+          id: field_model_value
+          table: node__field_model
+          field: field_model_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_model_value_op
+            label: Model
+            description: ''
+            use_operator: false
+            operator: field_model_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: model
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: 'Enter the word(s) to search in model'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: table
         options:
