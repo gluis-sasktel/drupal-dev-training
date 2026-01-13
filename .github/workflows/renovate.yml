@@ -23,9 +23,10 @@ jobs:
       - name: Run Renovate
         uses: renovatebot/github-action@v44.2.4
         env:
-          LOG_LEVEL: info
+          LOG_LEVEL: debug
           # Main token used by Renovate to operate on this repo
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_BOT_TOKEN }}
+          RENOVATE_REPOSITORIES: gluis-sasktel/drupal-dev-training
           # Optional: separate token for fetching GitHub changelogs/releases
           RENOVATE_GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_GITHUB_COM_TOKEN }}
         with:
