@@ -1,0 +1,33 @@
+
+name: Renovate
+
+on:
+  # Run daily at 08:00 Regina time (UTC-6 → 14:00 UTC in standard time; adjust for DST if needed)
+  schedule:
+    - cron: '45 17 * * 1-5'
+  # Allow manual run
+  workflow_dispatch:
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    # Required so the action can push branches and open PRs
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Renovate
+        uses: renovatebot/github-action@v39
+        env:
+          LOG_LEVEL: info
+          # Main token used by Renovate to operate on this repo
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_BOT_TOKEN }}
+          # Optional: separate token for fetching GitHub changelogs/releases
+          RENOVATE_GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_GITHUB_COM_TOKEN }}
+        with:
+          # Path to your config file (you can change this if you use renovate.json at root)
+          configurationFile: renovate/config.js
