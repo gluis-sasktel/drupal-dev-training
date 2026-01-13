@@ -18,10 +18,10 @@ jobs:
       issues: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run Renovate
-        uses: renovatebot/github-action@v44
+        uses: renovatebot/github-action@v44.2.4
         env:
           LOG_LEVEL: info
           # Main token used by Renovate to operate on this repo
