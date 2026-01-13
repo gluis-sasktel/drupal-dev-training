@@ -29,6 +29,7 @@ jobs:
           RENOVATE_REPOSITORIES: gluis-sasktel/drupal-dev-training
           # Optional: separate token for fetching GitHub changelogs/releases
           RENOVATE_GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_GITHUB_COM_TOKEN }}
+          RENOVATE_AUTODISCOVER: "true"
         with:
           # Path to your config file (you can change this if you use renovate.json at root)
           configurationFile: renovate/config.js
