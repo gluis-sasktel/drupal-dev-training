@@ -37,15 +37,23 @@ final class HelloworldController extends ControllerBase {
 
     $node = Node::load($node_id);
 
-    //dpm($node);
+    dpm($node);
     //dpm($node->title->value);
     //dpm($node->getTitle());
     //dpm($node->get('title')->value);
+
+    //To access to the field brand name that exist in phones
+    //example: node 101
+    //dpm($node->field_brand->entity->name->value);    
+    //dpm($node->field_brand->entity->getName());
+
+    
     
     if($node){
-      $output = $this->t('Hello @name! <br> The title of the node is @title.', [
+      $output = $this->t('Hello @name! <br> The link of the node is @title.', [
         '@name' => $name, 
-        '@title' => $node->getTitle(), 
+        //'@title' => $node->getTitle(),
+        '@title' => $node->toLink()->toString(),
       ]);
     }else{
       $output = $this->t('Hello @name! <br> The node ID @id doesn\'t exist.', [
