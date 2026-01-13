@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Renovate
-        uses: renovatebot/github-action@v42
+        uses: renovatebot/github-action@v44
         env:
           LOG_LEVEL: info
           # Main token used by Renovate to operate on this repo
