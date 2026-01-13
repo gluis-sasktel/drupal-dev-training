@@ -1,0 +1,10 @@
+
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "platform": "github",
+  "onboarding": false,
+  "requireConfig": false,
+  "branchPrefix": "renovate/",
+  "repositories": ["gluis-sasktel/drupal-dev-training"], 
+  "enabledManagers": ["composer"]
+}
