@@ -4,7 +4,7 @@ name: Renovate
 on:
   # Run daily at 08:00 Regina time (UTC-6 → 14:00 UTC in standard time; adjust for DST if needed)
   schedule:
-    - cron: '15 18 * * 1-5'
+    - cron: '10 19 * * 1-5'
   # Allow manual run
   workflow_dispatch:
 
@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Renovate
-        uses: renovatebot/github-action@v39
+        uses: renovatebot/github-action@v42
         env:
           LOG_LEVEL: info
           # Main token used by Renovate to operate on this repo
