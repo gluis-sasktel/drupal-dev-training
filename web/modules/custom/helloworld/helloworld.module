@@ -4,3 +4,37 @@
  * @file
  * Primary module hooks for Hello World module.
  */
+
+function hellow_world_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
+    
+    //Form many
+    $form_list = [
+        'node_accesory_form',
+        'node_phone_form',
+    ];
+    
+    if (in_array($form_id, $form_list)){
+        $form['options']['#open'] = TRUE;
+    }
+
+    //For one
+    if($form_id == 'node_accesory_form'){
+        $form['options']['#open'] = TRUE;
+    }
+
+}
+
+
+function hellow_world_form_node_article_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
+    dpm($form);
+    //$form['field_tags']['#access'] = FALSE; //To hide 
+    $form['field_tags']['#access'] = \Drupal::currentUser()->hasPermission('tag_articles');
+    
+    $user = \Drupal::currentUser();
+    $form['field_tags']['#access'] = $user->hasPermission('tag_articles');
+    //$user = \Drupal::service('current_user');
+    //dpm($user);
+
+    
+
+}
