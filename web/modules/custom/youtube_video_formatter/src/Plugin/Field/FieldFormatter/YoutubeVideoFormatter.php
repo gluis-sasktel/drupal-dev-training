@@ -56,7 +56,8 @@ class YoutubeVideoFormatter extends FormatterBase {
     $element = [];
     foreach ($items as $delta => $item) {
       $element[$delta] = [
-        '#markup' => $item->value,
+        '#theme' => 'youtube_video',
+        '#video_id' => $item->value,
       ];
     }
     return $element;
