@@ -1,0 +1,7 @@
+name: 'Youtube video formatter'
+type: module
+description: 'Youtube Video field formatter to turn a video ID into a Youtube video.'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:text
