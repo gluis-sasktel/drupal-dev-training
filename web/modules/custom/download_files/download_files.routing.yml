@@ -4,4 +4,4 @@ download_files.form:
     _title: 'Download Files'
     _form: 'Drupal\download_files\Form\DownloadFilesForm'
   requirements:
-    _permission: 'access content'
+    _permission: 'download files'

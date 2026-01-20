@@ -26,13 +26,16 @@ function hellow_world_form_alter(&$form, FormStateInterface $form_state, $form_i
 
 
 function hellow_world_form_node_article_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
-    dpm($form);
+    $user = \Drupal::service('current_user');
+    $form['field_tags']['#access'] = FALSE;
+        
+    
     //$form['field_tags']['#access'] = FALSE; //To hide 
     $form['field_tags']['#access'] = \Drupal::currentUser()->hasPermission('tag_articles');
     
-    $user = \Drupal::currentUser();
+    //$user = \Drupal::currentUser();
     $form['field_tags']['#access'] = $user->hasPermission('tag_articles');
-    //$user = \Drupal::service('current_user');
+    
     //dpm($user);
 
     

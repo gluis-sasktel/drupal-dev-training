@@ -24,9 +24,16 @@ final class DownloadFilesForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state): array {
 
-    $form['message'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Message'),
+    $form['media'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Select a file to download'),
+      '#options' => $this->getFilesOptions(),
+    ];
+
+    $form['pass_phrase'] = [
+      '#type' => 'email',
+      '#title' => $this->t('Email'),
+      '#description' => $this->t('Enter your email address to retrieve the file.'),
       '#required' => TRUE,
     ];
 
@@ -39,6 +46,21 @@ final class DownloadFilesForm extends FormBase {
     ];
 
     return $form;
+  }
+
+  public function getFilesOptions(){
+    $results = \Drupal::database()
+      ->select('file_managed', 'f')
+      ->fields('f', ['filename', 'uri'])
+      ->condition('f.status', 1)
+      ->execute()
+      ->fetchAll();
+
+    $options = [];
+    foreach($results as $file){
+      $options[$file->uri] = $file->filename;
+    }
+    return $options;
   }
 
   /**

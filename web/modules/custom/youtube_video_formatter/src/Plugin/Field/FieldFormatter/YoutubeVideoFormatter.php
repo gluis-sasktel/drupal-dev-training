@@ -24,7 +24,10 @@ class YoutubeVideoFormatter extends FormatterBase {
    * {@inheritdoc}
    */
   public static function defaultSettings(): array {
-    $setting = ['foo' => 'bar'];
+    $setting = [
+      'width' => 560,
+      'height' => 315,
+    ];
     return $setting + parent::defaultSettings();
   }
 
@@ -32,10 +35,16 @@ class YoutubeVideoFormatter extends FormatterBase {
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state): array {
-    $elements['foo'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Foo'),
-      '#default_value' => $this->getSetting('foo'),
+    $elements['width'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Video Width'),
+      '#default_value' => $this->getSetting('width'),
+    ];
+
+    $elements['height'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Video Height'),
+      '#default_value' => $this->getSetting('height'),
     ];
     return $elements;
   }
@@ -45,7 +54,10 @@ class YoutubeVideoFormatter extends FormatterBase {
    */
   public function settingsSummary(): array {
     return [
-      $this->t('Foo: @foo', ['@foo' => $this->getSetting('foo')]),
+      $this->t('Width: @width, Height: @height', [
+        '@width' => $this->getSetting('width'),
+        '@height' => $this->getSetting('height'),
+      ]),
     ];
   }
 
@@ -58,6 +70,8 @@ class YoutubeVideoFormatter extends FormatterBase {
       $element[$delta] = [
         '#theme' => 'youtube_video',
         '#video_id' => $item->value,
+        '#width' => $this->getSetting('width'),
+        '#height' => $this->getSetting('height'),
       ];
     }
     return $element;
