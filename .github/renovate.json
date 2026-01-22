@@ -6,5 +6,5 @@
   "requireConfig": false,
   "branchPrefix": "renovate/",
   "repositories": ["gluis-sasktel/drupal-dev-training"], 
-  "enabledManagers": ["composer"]
+  "enabledManagers": ["composer", "npm"]
 }

@@ -8,9 +8,6 @@
 
 module.exports = {
   // Core settings
-  platform: 'github',
-  onboarding: true,                 // Creates a PR with onboarding config if none exists
-  requireConfig: false,             // Allow Renovate to run with this shared config
   username: 'renovate[bot]',        // If you use a custom account, set that username here
   gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
 
@@ -107,5 +104,5 @@ module.exports = {
 
   // Repository-specific constraints
   // Set your base branch if not 'main'
-  baseBranches: ['main'],
+  //baseBranches: ['main'],
 };
