@@ -5,12 +5,25 @@
   "branchPrefix": "renovate/",
   "dependencyDashboard": true, 
   "enabledManagers": ["composer"],
-  "packageRules": [
+  "stabilityDays": 5,
+  "rangeStrategy": "bump",
+  
+"packageRules": [
     {
       "matchManagers": ["composer"],
-      "matchPackagePatterns": ["^drupal/"],
-      "groupName": "Drupal core & modules"
+      "matchPackagePatterns": ["^drupal/core($|-)", "^drupal/core-"],
+      "groupName": "Drupal core"
+    },
+    {
+      "matchManagers": ["composer"],
+      "matchPackagePatterns": ["^drupal/(?!core)"],
+      "groupName": "Drupal contrib modules"
     }
   ],
+
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["at any time"]
+  },
   "baseBranches": ["site-building-01"]
 }

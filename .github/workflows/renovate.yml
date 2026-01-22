@@ -3,8 +3,7 @@ name: Renovate
 
 on:
   # Run daily at 08:00 Regina time (UTC-6 → 14:00 UTC in standard time; adjust for DST if needed)
-  schedule:
-    - cron: '10 19 * * 1-5'
+  schedule: ["at any time"]
   # Allow manual run
   workflow_dispatch:
 
