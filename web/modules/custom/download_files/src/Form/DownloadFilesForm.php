@@ -50,10 +50,14 @@ final class DownloadFilesForm extends FormBase {
   }
 
   public function getFilesOptions(){
+    $config = \Drupal::config('download_files.settings');
+    $types = $config->get('file_types');
+
     $results = \Drupal::database()
       ->select('file_managed', 'f')
       ->fields('f', ['filename', 'uri'])
       ->condition('f.status', 1)
+      ->condition('filemime', $types, 'IN')
       ->execute()
       ->fetchAll();
 
