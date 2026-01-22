@@ -8,16 +8,19 @@
   "stabilityDays": 5,
   "rangeStrategy": "bump",
   
+
 "packageRules": [
     {
       "matchManagers": ["composer"],
-      "matchPackagePatterns": ["^drupal/core($|-)", "^drupal/core-"],
-      "groupName": "Drupal core"
+      "matchPackagePatterns": ["^drupal\\/core($|-)", "^drupal\\/core-"],
+      "groupName": "Drupal core",
+      "labels": ["dependencies", "drupal-core"]
     },
     {
       "matchManagers": ["composer"],
-      "matchPackagePatterns": ["^drupal/(?!core)"],
-      "groupName": "Drupal contrib modules"
+      "matchPackagePatterns": ["^drupal\\/(?!core(?:$|-))"],
+      "groupName": "Drupal contrib modules",
+      "labels": ["dependencies", "drupal-contrib"]
     }
   ],
 
