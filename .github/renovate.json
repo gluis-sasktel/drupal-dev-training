@@ -1,10 +1,17 @@
 
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "platform": "github",
-  "onboarding": false,
-  "requireConfig": false,
+  
   "branchPrefix": "renovate/",
+  "dependencyDashboard": true,
   "repositories": ["gluis-sasktel/drupal-dev-training"], 
-  "enabledManagers": ["composer", "npm"]
+  "enabledManagers": ["composer", "npm"],
+  "packageRules": [
+    {
+      "matchManagers": ["composer"],
+      "matchPackagePatterns": ["^drupal/"],
+      "groupName": "Drupal core & modules"
+    }
+  ]
+
 }
