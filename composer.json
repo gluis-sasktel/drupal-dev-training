@@ -31,7 +31,9 @@
         "drupal/gin": "^5.0",
         "drupal/kint-kint": "^2.3",
         "drupal/search_api": "^1.40",
+        "drupal/token": "^1.17",
         "drupal/upgrade_status": "^4.3",
+        "drupal/webform": "^6.3@beta",
         "drush/drush": "^13.6",
         "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^2.0"
