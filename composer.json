@@ -15,6 +15,10 @@
         },
         {
             "type": "composer",
+            "url": "https://repo.packagist.org"
+        },
+        {
+            "type": "composer",
             "url": "https://asset-packagist.org"
         }
     ],
