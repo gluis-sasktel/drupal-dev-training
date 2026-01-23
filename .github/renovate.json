@@ -11,7 +11,14 @@
     {
       "matchManagers": ["composer"],
       "matchPackagePatterns": ["^drupal/"],
-      "groupName": "Drupal core & modules"
+      "groupName": "Drupal core & modules",
+      
+      "matchDatasources": ["packagist"],
+      "registryUrls": [
+        "https://packages.drupal.org/8",
+        "https://repo.packagist.org",
+        "https://asset-packagist.org"
+      ]
     }
   ],
   "lockFileMaintenance": {
