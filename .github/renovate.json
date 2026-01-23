@@ -1,10 +1,39 @@
 
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "platform": "github",
-  "onboarding": false,
-  "requireConfig": false,
-  "branchPrefix": "renovate/",
-  "repositories": ["gluis-sasktel/drupal-dev-training"], 
-  "enabledManagers": ["composer"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json", 
+  "gitAuthor": "Renovate Bot <renovate-bot@mycompany.com>", 
+  "extends": [ 
+    "config:base", 
+    ":preserveSemverRanges", 
+    ":rebaseStalePrs", 
+    ":enableVulnerabilityAlertsWithLabel('security')", 
+    "group:recommended" 
+  ],
+  "packageRules": [ 
+  { 
+    "managers": ["composer"], 
+    "matchPackagePatterns": ["^drupal/"], 
+    "rangeStrategy": "update-lockfile", 
+    "groupName": "Drupal contributed modules",
+    "registryUrls": [
+        "https://packages.drupal.org/8",
+        "https://repo.packagist.org"        
+      ]
+  }, 
+  { 
+    "managers": ["composer"], 
+    "matchPackagePatterns": ["^drupal/core-recommended", "^drupal/core-composer-scaffold", "^drupal/core-project-message"], 
+    "rangeStrategy": "update-lockfile", 
+    "groupName": "Drupal core",
+    "registryUrls": [
+        "https://packages.drupal.org/8",
+        "https://repo.packagist.org"        
+      ]
+  } 
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["at any time"]
+  },
+  "baseBranches": ["site-building-01"]
 }
