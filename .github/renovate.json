@@ -7,23 +7,13 @@
   "enabledManagers": ["composer"],
   "stabilityDays": 5,
   "rangeStrategy": "bump",
-  
-
-"packageRules": [
+  "packageRules": [
     {
       "matchManagers": ["composer"],
-      "matchPackagePatterns": ["^drupal\\/core($|-)", "^drupal\\/core-"],
-      "groupName": "Drupal core",
-      "labels": ["dependencies", "drupal-core"]
-    },
-    {
-      "matchManagers": ["composer"],
-      "matchPackagePatterns": ["^drupal\\/(?!core(?:$|-))"],
-      "groupName": "Drupal contrib modules",
-      "labels": ["dependencies", "drupal-contrib"]
+      "matchPackagePatterns": ["^drupal/"],
+      "groupName": "Drupal core & modules"
     }
   ],
-
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["at any time"]
