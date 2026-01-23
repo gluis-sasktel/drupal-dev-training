@@ -1,5 +1,4 @@
-
-{
+{ 
   "$schema": "https://docs.renovatebot.com/renovate-schema.json", 
   "gitAuthor": "Renovate Bot <renovate-bot@mycompany.com>", 
   "extends": [ 
@@ -8,32 +7,20 @@
     ":rebaseStalePrs", 
     ":enableVulnerabilityAlertsWithLabel('security')", 
     "group:recommended" 
-  ],
+  ], 
   "packageRules": [ 
-  { 
-    "managers": ["composer"], 
-    "matchPackagePatterns": ["^drupal/"], 
-    "rangeStrategy": "update-lockfile", 
-    "groupName": "Drupal contributed modules",
-    "registryUrls": [
-        "https://packages.drupal.org/8",
-        "https://repo.packagist.org"        
-      ]
-  }, 
-  { 
-    "managers": ["composer"], 
-    "matchPackagePatterns": ["^drupal/core-recommended", "^drupal/core-composer-scaffold", "^drupal/core-project-message"], 
-    "rangeStrategy": "update-lockfile", 
-    "groupName": "Drupal core",
-    "registryUrls": [
-        "https://packages.drupal.org/8",
-        "https://repo.packagist.org"        
-      ]
-  } 
+    { 
+      "managers": ["composer"], 
+      "matchPackagePatterns": ["^drupal/"], 
+      "rangeStrategy": "update-lockfile", 
+      "groupName": "Drupal contributed modules" 
+    }, 
+    { 
+      "managers": ["composer"], 
+      "matchPackagePatterns": ["^drupal/core-recommended", "^drupal/core-composer-scaffold", "^drupal/core-project-message"], 
+      "rangeStrategy": "update-lockfile", 
+      "groupName": "Drupal core" 
+    }
   ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["at any time"]
-  },
-  "baseBranches": ["site-building-01"]
+  "baseBranches": ["renovateBot-integration"] 
 }
