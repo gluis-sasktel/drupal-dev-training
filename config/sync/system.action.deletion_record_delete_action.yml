@@ -1,0 +1,13 @@
+uuid: d4dec5bd-1d5d-4f41-b880-55e2d80ba75c
+langcode: en
+status: true
+dependencies:
+  module:
+    - audit
+_core:
+  default_config_hash: BS0qnXCOxQre8nFOT-kPCetWG1hnvoF-b1ON_ZwxnAo
+id: deletion_record_delete_action
+label: 'Delete deletion records'
+type: deletion_record
+plugin: 'entity:delete_action:deletion_record'
+configuration: {  }
