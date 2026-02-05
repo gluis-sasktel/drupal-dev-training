@@ -4,9 +4,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
-  amd_blocks: 0
   announcements_feed: 0
-  audit: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -16,15 +14,13 @@ module:
   color_field: 0
   comment: 0
   config: 0
-  config_ignore: 0
-  config_split: 0
   contact: 0
-  content_moderation: 0
   contextual: 0
-  core_event_dispatcher: 0
   cshs: 0
   datetime: 0
   dblog: 0
+  devel: 0
+  devel_generate: 0
   download_files: 0
   dynamic_page_cache: 0
   editor: 0
@@ -32,11 +28,11 @@ module:
   field_ui: 0
   file: 0
   filter: 0
-  hello_world: 0
+  helloworld: 0
   help: 0
   history: 0
-  hook_event_dispatcher: 0
   image: 0
+  kint: 0
   layout_builder: 0
   layout_discovery: 0
   link: 0
@@ -44,8 +40,6 @@ module:
   media_library: 0
   menu_link_content: 0
   menu_ui: 0
-  metatag: 0
-  metatag_open_graph: 0
   mysql: 0
   navigation: 0
   node: 0
@@ -55,7 +49,6 @@ module:
   path_alias: 0
   search: 0
   search_api: 0
-  search_api_db: 0
   shortcut: 0
   system: 0
   taxonomy: 0
@@ -63,11 +56,11 @@ module:
   token: 0
   toolbar: 0
   update: 0
+  upgrade_status: 0
   user: 0
   views_ui: 0
   webform: 0
   webform_ui: 0
-  workflows: 0
   youtube_video_formatter: 0
   views: 10
   standard: 1000

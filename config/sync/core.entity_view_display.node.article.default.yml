@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.field_video_id
     - image.style.wide
     - node.type.article
   module:
@@ -15,6 +16,7 @@ dependencies:
     - image
     - text
     - user
+    - youtube_video_formatter
 _core:
   default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
 id: node.article.default
@@ -56,6 +58,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 10
+    region: content
+  field_video_id:
+    type: youtube_video_formatter
+    label: above
+    settings:
+      foo: bar
+    third_party_settings: {  }
+    weight: 111
     region: content
   links:
     settings: {  }
