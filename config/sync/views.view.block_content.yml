@@ -1,4 +1,4 @@
-uuid: b9f14c5d-e2e8-4d16-a18b-9ef228397f0f
+uuid: 089ae066-e607-4575-9c1f-a7da804bc0f0
 langcode: en
 status: true
 dependencies:
@@ -317,17 +317,6 @@ display:
           empty: true
           content: 'There are no content blocks available.'
           tokenize: false
-        block_content_listing_empty:
-          id: block_content_listing_empty
-          table: block_content
-          field: block_content_listing_empty
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: block_content
-          plugin_id: block_content_listing_empty
-          label: ''
-          empty: true
       sorts: {  }
       arguments: {  }
       filters:

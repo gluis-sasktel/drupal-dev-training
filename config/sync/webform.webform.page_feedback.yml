@@ -1,4 +1,4 @@
-uuid: 55b86735-ec57-47f5-8482-afbf033dff4c
+uuid: a1c1cdee-8209-4caa-ada9-d82a10db4cf5
 langcode: en
 status: open
 dependencies: {  }
@@ -10,7 +10,7 @@ template: false
 archive: false
 id: page_feedback
 title: 'Page Feedback'
-description: '<p>Form for getting feedback about a page.</p>'
+description: ''
 categories: {  }
 elements: |-
   what_is_your_name:
@@ -21,11 +21,9 @@ elements: |-
     '#type': webform_rating
     '#title': 'Was this page useful?'
     '#required': true
-    '#reset': true
   page:
     '#type': hidden
-    '#title': Page
-    '#default_value': '[current-page:url]'
+    '#title': '[site:url][site:url]Page'
     '#prepopulate': true
 css: ''
 javascript: ''

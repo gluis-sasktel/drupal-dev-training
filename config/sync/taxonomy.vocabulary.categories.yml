@@ -1,9 +1,0 @@
-uuid: 5d3b41e1-af26-42cc-8346-8d0e516c2b01
-langcode: en
-status: true
-dependencies: {  }
-name: Categories
-vid: categories
-description: 'For example: cases, chargers, screen protectors, etc.'
-weight: 0
-new_revision: false

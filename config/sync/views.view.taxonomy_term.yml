@@ -1,8 +1,9 @@
-uuid: 6c73995b-efaf-466c-9956-1b1ae0f0971f
+uuid: dcf066da-65ad-4cad-8335-f114a711d093
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.rss
     - core.entity_view_mode.node.teaser
   module:
     - node
@@ -280,7 +281,7 @@ display:
         type: node_rss
         options:
           relationship: none
-          view_mode: default
+          view_mode: rss
       query:
         type: views_query
         options: {  }

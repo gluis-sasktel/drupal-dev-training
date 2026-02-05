@@ -1,4 +1,4 @@
-uuid: 3304b797-96b7-49c1-84ba-e2b35e99d87d
+uuid: dc85d924-70c7-4010-810b-5583683e8918
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ entity_type: node
 bundle: phone
 label: Brand
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

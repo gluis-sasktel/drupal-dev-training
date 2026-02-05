@@ -1,4 +1,4 @@
-uuid: 19ecdaa4-5ea5-49cd-9699-da1949d1384b
+uuid: b65e59ff-1b56-4166-b1d6-160056ffce84
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,6 @@ dependencies:
     - node.type.article
   module:
     - comment
-    - content_moderation
     - image
     - path
     - text
@@ -70,12 +69,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  moderation_state:
-    type: moderation_state_default
-    weight: 100
-    region: content
-    settings: {  }
     third_party_settings: {  }
   path:
     type: path

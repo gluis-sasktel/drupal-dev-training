@@ -1,4 +1,4 @@
-uuid: 96f61f10-55ae-4c09-8aff-6131b65a7a9c
+uuid: 2ff9ffda-0635-4341-ba3c-b7dd1830735d
 langcode: en
 status: true
 dependencies:
@@ -6,11 +6,12 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    available_menus: {  }
-    parent: ''
+    available_menus:
+      - main
+    parent: 'main:'
 name: Phone
 type: phone
-description: 'Use Phones for adding phone devices to the website.'
+description: null
 help: null
 new_revision: true
 preview_mode: 1

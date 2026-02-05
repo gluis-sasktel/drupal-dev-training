@@ -1,14 +1,12 @@
-uuid: e3e1f7f1-fe6a-455f-83e2-8f05809240fe
+uuid: bfb4007c-33a9-4128-b25d-291aa3c2f9d5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.phone.body
-    - field.field.node.phone.field_accessories
+    - field.field.node.phone.field_accesories
     - field.field.node.phone.field_brand
     - field.field.node.phone.field_color
     - field.field.node.phone.field_media_image
-    - field.field.node.phone.field_metatags
     - field.field.node.phone.field_model
     - field.field.node.phone.field_price
     - field.field.node.phone.field_storage
@@ -16,27 +14,13 @@ dependencies:
     - node.type.phone
   module:
     - color_field
-    - metatag
-    - text
     - user
 id: node.phone.default
 targetEntityType: node
 bundle: phone
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
-    region: content
-  field_accessories:
+  field_accesories:
     type: entity_reference_label
     label: above
     settings:
@@ -59,7 +43,7 @@ content:
       format: hex
       opacity: true
     third_party_settings: {  }
-    weight: 104
+    weight: 109
     region: content
   field_media_image:
     type: entity_reference_entity_view
@@ -70,13 +54,6 @@ content:
     third_party_settings: {  }
     weight: 106
     region: content
-  field_metatags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 109
-    region: content
   field_model:
     type: string
     label: above
@@ -86,10 +63,12 @@ content:
     weight: 101
     region: content
   field_price:
-    type: number_integer
+    type: number_decimal
     label: above
     settings:
       thousand_separator: ''
+      decimal_separator: .
+      scale: 2
       prefix_suffix: true
     third_party_settings: {  }
     weight: 103
@@ -101,7 +80,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 102
+    weight: 105
     region: content
   field_storage_unit:
     type: entity_reference_label
@@ -109,12 +88,11 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 105
+    weight: 104
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden:
-  search_api_excerpt: true
+hidden: {  }

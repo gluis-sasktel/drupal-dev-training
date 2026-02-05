@@ -1,9 +1,9 @@
-uuid: 653e6e56-b232-40fc-9e28-7fe5f30c153c
+uuid: d4dda26f-f5d5-4daf-879e-927e27e8d45e
 langcode: en
 status: true
 dependencies: {  }
 name: Brands
 vid: brands
-description: 'For example: Apple, Xiaomi, Samsung...'
+description: null
 weight: 0
 new_revision: false

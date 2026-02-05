@@ -1,4 +1,4 @@
-uuid: dc23e82f-6ec5-4bee-9095-397cd497d491
+uuid: a0b5753b-e5bb-4a9d-88f9-a7f3b49ed1c4
 langcode: en
 status: true
 dependencies:
@@ -7,10 +7,10 @@ dependencies:
 id: node.field_price
 field_name: field_price
 entity_type: node
-type: integer
+type: decimal
 settings:
-  unsigned: false
-  size: normal
+  precision: 10
+  scale: 2
 module: core
 locked: false
 cardinality: 1

@@ -1,9 +1,9 @@
-uuid: 17c77eb6-f4e4-4c6e-b0eb-d7fa4c722ebc
+uuid: 870488b1-aeae-4383-8386-99f353f5558a
 langcode: en
 status: true
 dependencies: {  }
-name: 'Storage Unit'
+name: 'storage unit'
 vid: storage_unit
-description: 'For example: MB, GB, TB...'
+description: null
 weight: 0
 new_revision: false
