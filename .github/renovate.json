@@ -1,10 +1,10 @@
 
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "platform": "github",
-  "onboarding": false,
-  "requireConfig": false,
+  "extends": ["config:recommended"],
+  
   "branchPrefix": "renovate/",
+<<<<<<< HEAD
   "repositories": ["gluis-sasktel/drupal-dev-training"], 
   "enabledManagers": ["composer", "npm"],
   "rangeStrategy": "bump",
@@ -19,4 +19,43 @@
     }
   ]
 
+=======
+  "dependencyDashboard": true, 
+  "enabledManagers": ["composer"],
+  "stabilityDays": 5,
+  "rangeStrategy": "bump",
+
+  
+  // Equivalent to `composer update --with-all-dependencies`
+  "postUpdateOptions": ["composerWithAll"],
+
+  "packageRules": [ 
+  { 
+    "managers": ["composer"], 
+    "matchPackagePatterns": ["^drupal/"], 
+    "rangeStrategy": "update-lockfile", 
+    "groupName": "Drupal contributed modules",
+    "registryUrls": [
+        "https://packages.drupal.org/8",
+        "https://repo.packagist.org"        
+      ]
+  }, 
+
+  { 
+    "managers": ["composer"], 
+    "matchPackagePatterns": ["^drupal/core-recommended", "^drupal/core-composer-scaffold", "^drupal/core-project-message"], 
+    "rangeStrategy": "update-lockfile", 
+    "groupName": "Drupal core",
+    "registryUrls": [
+        "https://packages.drupal.org/8",
+        "https://repo.packagist.org"        
+      ]
+  } 
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["at any time"]
+  },
+  "baseBranches": ["site-building-01"]
+>>>>>>> 5d3ecf416845e7afbfa04de53f0602f5ca6d6451
 }

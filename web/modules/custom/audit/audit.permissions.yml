@@ -1,0 +1,11 @@
+administer deletion_record:
+  title: 'Administer deletion records'
+  restrict access: true
+view deletion_record:
+  title: 'View deletion record'
+edit deletion_record:
+  title: 'Edit deletion record'
+delete deletion_record:
+  title: 'Delete deletion record'
+create deletion_record:
+  title: 'Create deletion record'
