@@ -1,0 +1,20 @@
+uuid: b2e79c8f-65d3-43bb-bf53-4c7ef2bd9233
+langcode: en
+status: true
+dependencies:
+  module:
+    - audit
+  theme:
+    - olivero
+id: olivero_deletedentitiesblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: audit_deleted_entities_block
+settings:
+  id: audit_deleted_entities_block
+  label: 'Deleted Entities Block'
+  label_display: visible
+  provider: audit
+visibility: {  }

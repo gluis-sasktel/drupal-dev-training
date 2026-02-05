@@ -1,4 +1,4 @@
-uuid: 6d5572e5-f88f-4ce9-9dca-499511e82f7e
+uuid: 6e0c5efc-8386-4205-8098-116e5b0d328b
 langcode: en
 status: true
 dependencies:
@@ -55,3 +55,4 @@ content:
 hidden:
   comment: true
   field_video_id: true
+  search_api_excerpt: true
