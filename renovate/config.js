@@ -104,5 +104,6 @@ module.exports = {
 
   // Repository-specific constraints
   // Set your base branch if not 'main'
-  //baseBranches: ['main'],
+  //cd ..
+  // baseBranches: ['main'],
 };
