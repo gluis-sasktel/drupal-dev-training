@@ -2,23 +2,21 @@
 
 /**
  * @file
- *
- * Hook implmementations for the youtube_vide_formatter module
+ * 
+ * Hook implementations for the youtube_video_formatter module.
  */
 
 /**
-  * Implements hook_theme()
-  *
-  */
-function hook_theme($existing, $type, $theme, $path) : array {
-    return [
-        'youtube_video' => [
-            'variables' => [
-                'video_id' => NULL,
-                'width' => 560,
-                'height' => 315,
-            ],
-        ],
-    ];
-
+ * Implements hook_theme().
+ */
+function youtube_video_formatter_theme($existing, $type, $theme, $path) : array {
+  return [
+    'youtube_video' => [
+      'variables' => [
+        'video_id' => NULL,
+        'width' => 560,
+        'height' => 315,
+      ],
+    ],
+  ];
 }

@@ -1,9 +1,9 @@
 _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: en
-uuid: 713b3f1c-7ab0-4f83-88d2-2fb368aa3d89
-name: training
-mail: gerardo.luismartinez@sasktel.com
+uuid: a605c3aa-8601-420e-a8c0-658085b94653
+name: 'SaskTel Training'
+mail: admin@example.com
 slogan: ''
 page:
   403: ''

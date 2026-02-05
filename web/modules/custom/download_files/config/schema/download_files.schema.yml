@@ -3,6 +3,6 @@ download_files.settings:
   type: config_object
   label: 'Download files settings'
   mapping:
-    example:
-      type: string
-      label: 'Example'
+    file_types:
+      type: mapping
+      label: 'File types'

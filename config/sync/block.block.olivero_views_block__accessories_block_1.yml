@@ -1,0 +1,24 @@
+uuid: 47ae2dc7-c8e0-4aaf-b4c1-b21ffd461585
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.accessories
+  module:
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__accessories_block_1
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:accessories-block_1'
+settings:
+  id: 'views_block:accessories-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility: {  }

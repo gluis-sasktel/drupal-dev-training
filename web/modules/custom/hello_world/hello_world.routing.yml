@@ -1,0 +1,23 @@
+hello_world.hello:
+  path: '/hello'
+  defaults:
+    _title: 'Hello World'
+    _controller: '\Drupal\hello_world\Controller\HelloWorldController::hello'
+  requirements:
+    _permission: 'access hello world page'
+
+hello_world.hello_person:
+  path: '/hello/{name}'
+  defaults:
+    _title: 'Hello World - with dynamic name'
+    _controller: '\Drupal\hello_world\Controller\HelloWorldController::hello'
+  requirements:
+    _permission: 'access content'
+
+hello_world.hello_person_node:
+  path: '/hello/{name}/{nid}'
+  defaults:
+    _title: 'Hello World - Person and node'
+    _controller: '\Drupal\hello_world\Controller\HelloWorldController::helloNameNode'
+  requirements:
+    _permission: 'access content'

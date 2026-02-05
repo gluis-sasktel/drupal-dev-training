@@ -1,4 +1,4 @@
-uuid: 3cc2556d-c62f-4b3c-a426-248ae1bf9378
+uuid: 65232c3b-50f8-45ea-b305-f3425deafd69
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.field_video_id
     - image.style.wide
     - node.type.article
   module:
@@ -15,6 +16,7 @@ dependencies:
     - image
     - text
     - user
+    - youtube_video_formatter
 _core:
   default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
 id: node.article.default
@@ -57,9 +59,18 @@ content:
     third_party_settings: {  }
     weight: 10
     region: content
+  field_video_id:
+    type: youtube_video_formatter
+    label: above
+    settings:
+      foo: bar
+    third_party_settings: {  }
+    weight: 111
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

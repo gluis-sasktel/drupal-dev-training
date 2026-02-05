@@ -1,0 +1,21 @@
+uuid: 04b1cd44-9d8d-41f2-9917-87cfe738603c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_on_sale
+    - node.type.accessory
+id: node.accessory.field_on_sale
+field_name: field_on_sale
+entity_type: node
+bundle: accessory
+label: 'On sale'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

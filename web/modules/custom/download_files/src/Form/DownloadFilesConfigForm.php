@@ -41,18 +41,17 @@ final class DownloadFilesConfigForm extends ConfigFormBase {
 
   public function getFileTypes() {
     $results = \Drupal::database()
-    ->select('file_managed', 'f')
-    ->distinct()
-    ->fields('f',['filemime'])
-    ->execute()
-    ->fetchCol();
+      ->select('file_managed', 'f')
+      ->distinct()
+      ->fields('f', ['filemime'])
+      ->execute()
+      ->fetchCol();
 
     $types = [];
     foreach ($results as $type) {
       $types[$type] = $type;
     }
     return $types;
-
   }
 
   /**

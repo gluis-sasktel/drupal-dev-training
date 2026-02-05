@@ -1,9 +1,10 @@
-uuid: 838b608d-2772-420e-b301-e90b1a19c5e9
+uuid: b4b6fde1-d78a-4ede-a393-8aa0e59b6eb4
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.webform_default
   module:
     - comment
     - contact
@@ -17,7 +18,7 @@ _core:
   default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
 id: authenticated
 label: 'Authenticated user'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
   - 'access comments'
@@ -29,4 +30,5 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'use text format webform_default'
   - 'view media'

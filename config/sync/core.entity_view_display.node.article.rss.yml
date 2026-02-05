@@ -1,4 +1,4 @@
-uuid: e67cfc8b-724e-4dcb-9a28-17a3362711ad
+uuid: 82e7427d-802f-476d-8417-59b3d095d54c
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.field_video_id
     - node.type.article
   module:
     - user
@@ -26,3 +27,5 @@ hidden:
   comment: true
   field_image: true
   field_tags: true
+  field_video_id: true
+  search_api_excerpt: true

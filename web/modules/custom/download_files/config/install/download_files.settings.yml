@@ -1,0 +1,4 @@
+file_types:
+  image/jpeg: image/jpeg
+  application/pdf: application/pdf
+  image/png: image/png

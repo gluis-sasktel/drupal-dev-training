@@ -15,10 +15,6 @@
         },
         {
             "type": "composer",
-            "url": "https://repo.packagist.org"
-        },
-        {
-            "type": "composer",
             "url": "https://asset-packagist.org"
         }
     ],
@@ -27,16 +23,19 @@
         "cweagans/composer-patches": "^2.0",
         "drupal/admin_toolbar": "^3.6",
         "drupal/color_field": "^3.0",
+        "drupal/config_ignore": "^3.3",
+        "drupal/config_split": "^2.0",
         "drupal/core-composer-scaffold": "^11.0",
         "drupal/core-project-message": "^11.0",
         "drupal/core-recommended": "^11.0",
         "drupal/cshs": "^4.0",
         "drupal/devel": "^5.4",
         "drupal/gin": "^5.0",
+        "drupal/hook_event_dispatcher": "^4.2",
         "drupal/kint-kint": "^2.3",
+        "drupal/metatag": "^2.2",
         "drupal/search_api": "^1.40",
         "drupal/token": "^1.17",
-        "drupal/upgrade_status": "^4.3",
         "drupal/webform": "^6.3@beta",
         "drush/drush": "^13.6",
         "npm-asset/select2": "^4.0",
@@ -62,7 +61,7 @@
     },
     "extra": {
         "installer-types": [
-            "bower-asset",
+            "bower-assets",
             "npm-asset"
         ],
         "enable-patching": true,

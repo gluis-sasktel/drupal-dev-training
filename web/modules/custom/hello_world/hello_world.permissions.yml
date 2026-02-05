@@ -1,0 +1,7 @@
+tag articles:
+  title: 'Tag articles'
+  description: 'Adding tags to article nodes.'
+  # restrict access: true
+
+access hello world page:
+  title: 'Access hello world page'

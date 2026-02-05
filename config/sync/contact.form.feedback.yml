@@ -1,4 +1,4 @@
-uuid: e9464834-f240-4cfd-906a-1552079acafd
+uuid: 6049b5de-0e2b-4f6c-bb56-f94226bd4b82
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - gerardo.luismartinez@sasktel.com
+  - admin@example.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

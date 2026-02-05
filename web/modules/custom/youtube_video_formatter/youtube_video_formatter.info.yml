@@ -1,4 +1,4 @@
-name: 'Youtube video formatter'
+name: 'Youtube Video Formatter'
 type: module
 description: 'Youtube Video field formatter to turn a video ID into a Youtube video.'
 package: Custom

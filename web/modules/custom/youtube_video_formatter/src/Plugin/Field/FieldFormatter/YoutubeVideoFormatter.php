@@ -11,11 +11,11 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
- * Plugin implementation of the 'YouTube Video' formatter.
+ * Plugin implementation of the 'Youtube Video' formatter.
  */
 #[FieldFormatter(
   id: 'youtube_video_formatter',
-  label: new TranslatableMarkup('YouTube Video'),
+  label: new TranslatableMarkup('Youtube Video'),
   field_types: ['string'],
 )]
 class YoutubeVideoFormatter extends FormatterBase {

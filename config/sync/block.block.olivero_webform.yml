@@ -1,0 +1,26 @@
+uuid: eb756c5c-1e88-4f1b-a5fa-723153911490
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.page_feedback
+  module:
+    - webform
+  theme:
+    - olivero
+id: olivero_webform
+theme: olivero
+region: content_below
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Page feedback'
+  label_display: visible
+  provider: webform
+  webform_id: page_feedback
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility: {  }

@@ -1,13 +1,17 @@
-uuid: 6ad1f4fb-7c72-473f-9c33-26d2b551a3ab
+uuid: 41517838-2d53-4b30-9981-1437b032b3e6
 langcode: en
 status: true
 dependencies:
   config:
+    - node.type.accessory
     - node.type.article
     - node.type.page
+    - node.type.phone
     - taxonomy.vocabulary.tags
+    - workflows.workflow.editorial
   module:
     - comment
+    - content_moderation
     - contextual
     - file
     - node
@@ -19,7 +23,7 @@ _core:
   default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
 id: content_editor
 label: 'Content editor'
-weight: 2
+weight: -8
 is_admin: false
 permissions:
   - 'access administration pages'
@@ -28,20 +32,34 @@ permissions:
   - 'access files overview'
   - 'access toolbar'
   - 'administer url aliases'
+  - 'create accessory content'
   - 'create article content'
   - 'create page content'
+  - 'create phone content'
   - 'create terms in tags'
   - 'create url aliases'
   - 'delete article revisions'
+  - 'delete own accessory content'
   - 'delete own article content'
   - 'delete own files'
   - 'delete own page content'
+  - 'delete own phone content'
   - 'delete page revisions'
+  - 'edit any accessory content'
+  - 'edit any phone content'
+  - 'edit own accessory content'
   - 'edit own article content'
   - 'edit own comments'
   - 'edit own page content'
+  - 'edit own phone content'
   - 'edit terms in tags'
+  - 'revert accessory revisions'
   - 'revert all revisions'
+  - 'revert phone revisions'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition send_to_review'
+  - 'view accessory revisions'
   - 'view all revisions'
   - 'view own unpublished content'
+  - 'view phone revisions'
   - 'view the administration theme'

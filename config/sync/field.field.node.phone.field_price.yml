@@ -1,4 +1,4 @@
-uuid: cb360526-60c5-455d-b5ed-71dcad6ce754
+uuid: cc0963f3-02ff-48d3-9270-89b5658061d9
 langcode: en
 status: true
 dependencies:
@@ -10,14 +10,14 @@ field_name: field_price
 entity_type: node
 bundle: phone
 label: Price
-description: ''
-required: false
+description: 'This is the retail price'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  min: 1.0
+  min: 0
   max: null
   prefix: $
   suffix: ''
-field_type: decimal
+field_type: integer
