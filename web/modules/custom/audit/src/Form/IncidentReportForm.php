@@ -6,11 +6,33 @@ namespace Drupal\audit\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\audit\Event\IncidentReport;
+use Drupal\audit\Event\IncidentReportEvents;
+Use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Entity\EntityTypeManager;
+Use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**
  * Provides a Audit form.
  */
 final class IncidentReportForm extends FormBase {
+
+  protected EntityTypeManager $entityTypeManager;
+
+  protected EventDispatcher $dispatcher;
+
+  public static function create(ContainerInterface $container){
+    return new static(
+      $container->get('event_type.manager'),
+      $container->get('event_dispatcher'),
+    );
+  }
+
+  public function __construct(EntityTypeManager $entityTypeManager, EventDispatcher $dispatcher){
+    $this->entityTypeManager = $entityTypeManager;
+    $this->dispatcher = $dispatcher;
+  }
+
 
   /**
    * {@inheritdoc}
@@ -63,7 +85,8 @@ final class IncidentReportForm extends FormBase {
   }
 
   public function getEntities() {
-    $storage = \Drupal::entityTypeManager()->getStorage('deletion_record');
+    //$storage = \Drupal::entityTypeManager()->getStorage('deletion_record');
+    $storage = $this->entityTypeManager->getStorage('deletion_record');
     $query = $storage->getQuery();
     $query->sort('deleted', 'DESC');
     $query->accessCheck();
@@ -81,22 +104,27 @@ final class IncidentReportForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state): void {
-    // @todo Validate the form here.
-    // Example:
-    // @code
-    //   if (mb_strlen($form_state->getValue('message')) < 10) {
-    //     $form_state->setErrorByName(
-    //       'message',
-    //       $this->t('Message should be at least 10 characters.'),
-    //     );
-    //   }
-    // @endcode
+    if (mb_strlen($form_state->getValue('report')) < 15) {
+      $form_state->setErrorByName(
+        'report',
+        $this->t('The report should be at least 15 characters.'),
+      );
+    }
   }
 
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
+    $reporterName = $form_state->getValue('reporter_name');
+    $reporterEmail = $form_state->getValue('reporter_email');
+    $entity = $form_state->getValue('entity');
+    $report = $form_state->getValue('report');
+
+    $eventObject = new IncidentReport($reporterName, $reporterEmail, $entity, $report);        
+    //$event_dispatcher->dispatch($eventObject, IncidentReportEvents::NEW_INCIDENT);
+    $this->dispatcher->dispatch($eventObject, IncidentReportEvents::NEW_INCIDENT);
+
     $this->messenger()->addStatus($this->t('The message has been sent.'));
     $form_state->setRedirect('<front>');
   }

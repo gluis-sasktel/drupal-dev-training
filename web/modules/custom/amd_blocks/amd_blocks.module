@@ -1,0 +1,14 @@
+<?php
+
+function amd_blocks_theme($existing, $type, $theme, $path) : array {
+
+  return [
+    'featured_product' => [
+      'variables' => [
+        'title' => NULL,
+        'img' => NULL,
+        'price' => 0,
+      ],
+    ],
+  ];
+}
